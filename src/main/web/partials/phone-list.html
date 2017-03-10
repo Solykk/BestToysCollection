@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+
+
+      Поиск: <input ng-model="query">
+      <br/>
+      Сортировать По:
+      <select ng-model="orderProp">
+        <option value="name">Алфавиту</option>
+        <option value="dateOf">По Дате Добавления</option>
+        <option value="price">Возрастанию Цены</option>
+        <option value="-price">Убыванию Цены</option>
+      </select>
+      <br/>
+
+
+
+          <input type="checkbox" ng-model="checkboxModel.value1"
+                 ng-true-value="'first'" ng-false-value="''">
+        Аксессуары, Одежда и Обувь Для Кукол
+        <br/>
+
+          <input type="checkbox" ng-model="checkboxModel.value2"
+                 ng-true-value="'second'" ng-false-value="''">
+        Игры, Обучалки, Часы
+        <br/>
+          <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Персонажи Фильмов, Коллекционные
+         <br/>
+          <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+         Мягкие Игрушки
+         <br/>
+          <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Головы, Запчасти
+         <br/>
+        <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Пазлы
+        <br/>
+        <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Одежда Для Кукол, На Заказ
+        <br/>
+        <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Карнавальные Костюмы
+        <br/>
+        <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Бен Тен: Фигурки и Другое
+        <br/>
+        <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Киндер_Сюрприз
+        <br/>
+        <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Дисней: Принцессы и Их Друзья
+        <br/>
+        <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+        Игрушки Макдональдс
+        <br/>
+       <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+       Фигурки Игровые и Коллекционные
+        <br/>
+        <input type="checkbox" ng-model="checkboxModel.value2"
+             ng-true-value="'second'" ng-false-value="''">
+       Фирменные Куклы
+       <br/>
+
+
+
+    </div>
+    <div class="second">
+      <!--Body content-->
+
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query | filter:filterByCategory | orderBy:orderProp"
+            class="thumbnail phone-listing">
+          <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}"></a>
+          <a href="#/phones/{{phone.id}}">{{phone.name + " " + phone.dateOf | date:'yyyy.MMM.dd'}}</a>
+          <p>{{phone.snippet}}</p>
+          <br>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
